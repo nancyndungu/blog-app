@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="/public/css/sytles.css"></script>
+    <title>Document</title>
+</head>
+<body>   
+    <% blog.forEach((blog)=>{%>
+    <h3>Read Blog</h3>
+    <div> <%=blog.title%></div>
+    <div> <%=blog.description%> </div>
+    <button> <a href="/delete/<%=blog.id%>">Delete</a></button>  
+    <div>Comment</div>
+    <form action="/read/<%=blog.id%>/comment" method="post">
+        <textarea name="blog_comment"></textarea>
+        <button>Submit Comment</button>
+    </form> 
+    <%})%> 
+
+    <h5>Comments</h5>
+    <% comments.forEach((comment)=>{%>
+        <div> <%=comment.blog_comment%></div>
+        <br />
+    <%})%> 
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <% blog.forEach((blog)=>{%>
+        <div>
+            <form action="/comment/<%=blog.id%>", method="post">
+                <input type="text" value="<%=blog.title%>" type="text">
+                <textarea name="description" value="" type="text"><%=blog.description%></textarea>
+                <textarea name="description" value="" type="text">Comment</textarea>
+                <div class="btn-container"><button>submit</button</div>
+            </form>
+        </div>
+    <%})%>   
+    
+</body>
+</html>
+
+
+
